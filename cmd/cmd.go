@@ -11,10 +11,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/Ladicle/tcardgen/pkg/canvas"
-	"github.com/Ladicle/tcardgen/pkg/canvas/fontfamily"
-	"github.com/Ladicle/tcardgen/pkg/config"
-	"github.com/Ladicle/tcardgen/pkg/hugo"
+	"github.com/alfranz/tcardgen/pkg/canvas"
+	"github.com/alfranz/tcardgen/pkg/canvas/fontfamily"
+	"github.com/alfranz/tcardgen/pkg/config"
+	"github.com/alfranz/tcardgen/pkg/hugo"
 )
 
 const (
