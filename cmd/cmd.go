@@ -174,7 +174,7 @@ func generateTCard(contentPath, outPath string, tpl image.Image, ffa *fontfamily
 
 	var tags []string
 	for _, t := range fm.Tags {
-		tags = append(tags, strings.Title(t))
+		tags = append(tags, strings.ToUpper(t))
 	}
 
 	if err := c.DrawTextAtPoint(
@@ -188,7 +188,7 @@ func generateTCard(contentPath, outPath string, tpl image.Image, ffa *fontfamily
 		return err
 	}
 	if err := c.DrawTextAtPoint(
-		strings.ToUpper(fm.Category),
+		strings.ToUpper(""),
 		*cnf.Category.Start,
 		canvas.FgHexColor(cnf.Category.FgHexColor),
 		canvas.FontFaceFromFFA(ffa, cnf.Category.FontStyle, cnf.Category.FontSize),
@@ -196,7 +196,7 @@ func generateTCard(contentPath, outPath string, tpl image.Image, ffa *fontfamily
 		return err
 	}
 	if err := c.DrawTextAtPoint(
-		fmt.Sprintf("%s%s%s", fm.Author, cnf.Info.Separator, fm.Date.Format("Jan 2, 2022")),
+		fm.Date.Format("ALEXFRANZ.COM"),
 		*cnf.Info.Start,
 		canvas.FgHexColor(cnf.Info.FgHexColor),
 		canvas.FontFaceFromFFA(ffa, cnf.Info.FontStyle, cnf.Info.FontSize),

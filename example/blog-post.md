@@ -1,10 +1,9 @@
----
-title: "HugoでもTwitterCardを自動生成したい"
-author: ["@Ladicle"]
-lastmod: 2020-06-21T03:56:24+09:00
-publishDate: 2020-06-20T12:32:01+09:00
-tags: ["hugo", "go", "OGP"]
-categories: ["program"]
----
++++
+title = "Generate Twitter Image for your Hugo posts"
+author = ["Alex Franz"]
+date = 2022-08-27T08:29:14+09:00
+tags = ["python", "twitter"]
+categories = ["python", "ML"]
++++
 
-test content...
+Amazing content

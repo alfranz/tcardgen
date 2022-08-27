@@ -1,4 +1,4 @@
-template: example/template3.png
+template: example/template-alex.png
 title:
   start:
     px: 113
@@ -17,7 +17,7 @@ category:
   fontStyle: Regular
 info:
   start:
-    px: 223
+    px: 123
     py: 120
   fgHexColor: "#A0A0A0"
   fontSize: 38
