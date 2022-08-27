@@ -1,6 +1,8 @@
 # executable
 tcardgen
+cardgen
 # resources
 *.png
 *.ttf
 !example/*.png
+.DS_Store
