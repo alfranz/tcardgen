@@ -11,10 +11,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/alfranz/tcardgen/pkg/canvas"
-	"github.com/alfranz/tcardgen/pkg/canvas/fontfamily"
-	"github.com/alfranz/tcardgen/pkg/config"
-	"github.com/alfranz/tcardgen/pkg/hugo"
+	"github.com/alfranz/cardgen/pkg/canvas"
+	"github.com/alfranz/cardgen/pkg/canvas/fontfamily"
+	"github.com/alfranz/cardgen/pkg/config"
+	"github.com/alfranz/cardgen/pkg/hugo"
 )
 
 const (
@@ -24,16 +24,16 @@ const (
 	longDesc = `Generate TwitterCard(OGP) images for your Hugo posts.
 Supported front-matters are title, author, categories, tags, and date.`
 	example = `# Generate a image and output to the example directory.
-tcardgen --fontDir=font --output=example --template=example/template.png example/blog-post.md
+cardgen --fontDir=font --output=example --template=example/template.png example/blog-post.md
 
 # Generate a image and output to the example directory as "featured.png".
-tcardgen --fontDir=font --output=example/featured.png --template=example/template.png example/blog-post.md
+cardgen --fontDir=font --output=example/featured.png --template=example/template.png example/blog-post.md
 
 # Generate multiple images.
-tcardgen --template=example/template.png example/*.md
+cardgen --template=example/template.png example/*.md
 
 # Genrate an image based on the drawing configuration.
-tcardgen --config=config.yaml example/*.md`
+cardgen --config=config.yaml example/*.md`
 )
 
 var (
@@ -60,7 +60,7 @@ type RootCommandOption struct {
 func NewRootCmd() *cobra.Command {
 	opt := RootCommandOption{}
 	cmd := &cobra.Command{
-		Use:                   "tcardgen [-f <FONTDIR>] [-o <OUTPUT>] [-t <TEMPLATE>] [-c <CONFIG>] <FILE>...",
+		Use:                   "cardgen [-f <FONTDIR>] [-o <OUTPUT>] [-t <TEMPLATE>] [-c <CONFIG>] <FILE>...",
 		Version:               version,
 		DisableFlagsInUseLine: true,
 		SilenceUsage:          true,

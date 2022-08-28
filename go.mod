@@ -1,4 +1,4 @@
-module github.com/alfranz/tcardgen
+module github.com/alfranz/cardgen
 
 go 1.14
 

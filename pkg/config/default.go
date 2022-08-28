@@ -1,8 +1,8 @@
 package config
 
 import (
-	"github.com/alfranz/tcardgen/pkg/canvas/box"
-	"github.com/alfranz/tcardgen/pkg/canvas/fontfamily"
+	"github.com/alfranz/cardgen/pkg/canvas/box"
+	"github.com/alfranz/cardgen/pkg/canvas/fontfamily"
 )
 
 const DefaultTemplate = "example/template.png"

@@ -11,23 +11,23 @@ Also, both toml and yaml formats are supported.
 ### Go version < 1.16
 
 ```bash
-go get github.com/alfranz/tcardgen@latest
+go get github.com/alfranz/cardgen@latest
 ```
 
 ### Go 1.16+
 
 ```bash
-go install github.com/alfranz/tcardgen@latest
+go install github.com/alfranz/cardgen@latest
 ```
 
 ## Getting Started
 
-1. Install `tcardgen` command
+1. Install `cardgen` command
 2. Download your favorite TrueType fonts (the above sample use [KintoSans](https://github.com/ookamiinc/kinto))
 3. Create template image (The easyest way is to replace the author image of the template in the [example](./example) directory.)
 4. Run the following command
 
-> **NOTE**: `tcardgen` parses a font style from the file name,
+> **NOTE**: `cardgen` parses a font style from the file name,
 > so the font file must follow the naming rule (`<name>-<style>.ttf`), and arrange font files as follows:
 
 ```bash
@@ -39,7 +39,7 @@ font/
 
 0 directories, 3 files
 
-$ tcardgen -f path/to/fontDir \
+$ cardgen -f path/to/fontDir \
            -o path/to/hugo/static/imgDir \
            -t path/to/templateFile \
            path/to/hugo/content/posts/*.md
@@ -53,7 +53,7 @@ If you want to change the color, style, or position of text, you can pass a conf
 Refer to the [example/template3.config.yaml](example/template3.config.yaml) to see how to configure it.
 
 ```bash
-$ tcardgen -c example/template3.config.yaml example/blog-post2.md
+$ cardgen -c example/template3.config.yaml example/blog-post2.md
 Load fonts from "font" directory
 Load template from "example/template3.png"
 Success to generate twitter card into out/blog-post2.png
@@ -82,41 +82,41 @@ If the thumbnail is defined in the post, it is used first. Otherwise, the genera
 
 ### Generate images of updated articles
 
-You can generate only the image of the updated article by using `git diff` and `tcardgen`.
+You can generate only the image of the updated article by using `git diff` and `cardgen`.
 
 ```bash
 $ git diff --name-only HEAD content/post |\
-    xargs tcardgen -o static/tcard -f assets/fonts/kinto-sans -t assets/template.png
+    xargs cardgen -o static/tcard -f assets/fonts/kinto-sans -t assets/template.png
 ```
 
 
 ## Usage
 
 ```bash
-$ tcardgen -h
+$ cardgen -h
 Generate TwitterCard(OGP) images for your Hugo posts.
 Supported front-matters are title, author, categories, tags, and date.
 
 Usage:
-  tcardgen [-f <FONTDIR>] [-o <OUTPUT>] [-t <TEMPLATE>] [-c <CONFIG>] <FILE>...
+  cardgen [-f <FONTDIR>] [-o <OUTPUT>] [-t <TEMPLATE>] [-c <CONFIG>] <FILE>...
 
 Examples:
 # Generate a image and output to the example directory.
-tcardgen --fontDir=font --output=example --template=example/template.png example/blog-post.md
+cardgen --fontDir=font --output=example --template=example/template.png example/blog-post.md
 
 # Generate a image and output to the example directory as "featured.png".
-tcardgen --fontDir=font --output=example/featured.png --template=example/template.png example/blog-post.md
+cardgen --fontDir=font --output=example/featured.png --template=example/template.png example/blog-post.md
 
 # Generate multiple images.
-tcardgen --template=example/template.png example/*.md
+cardgen --template=example/template.png example/*.md
 
 # Genrate an image based on the drawing configuration.
-tcardgen --config=config.yaml example/*.md
+cardgen --config=config.yaml example/*.md
 
 Flags:
   -c, --config string     Set a drawing configuration file.
   -f, --fontDir string    Set a font directory. (default "font")
-  -h, --help              help for tcardgen
+  -h, --help              help for cardgen
       --outDir string     (DEPRECATED) Set an output directory.
   -o, --output string     Set an output directory or filename (only png format). (default "out")
   -t, --template string   Set a template image file. (default example/template.png)

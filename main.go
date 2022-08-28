@@ -5,11 +5,11 @@ import (
 
 	"github.com/spf13/pflag"
 
-	"github.com/alfranz/tcardgen/cmd"
+	"github.com/alfranz/cardgen/cmd"
 )
 
 func init() {
-	flags := pflag.NewFlagSet("tcardgen", pflag.ExitOnError)
+	flags := pflag.NewFlagSet("cardgen", pflag.ExitOnError)
 	pflag.CommandLine = flags
 }
 
